@@ -80,6 +80,9 @@ export class Profanity {
             const underscore = word.includes("_") ? "_" : "";
             return this.options.grawlix + underscore;
           }
+          case CensorType.WordLength: {
+            return new Array(word.length + 1).join(this.options.grawlixChar);
+          }
           case CensorType.FirstChar:
             return this.options.grawlixChar + word.slice(1);
           case CensorType.FirstVowel:
